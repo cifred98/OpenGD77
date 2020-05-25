@@ -6,6 +6,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 #include "fsl_device_registers.h"
 #include "clock_config.h"
 #include "board.h"

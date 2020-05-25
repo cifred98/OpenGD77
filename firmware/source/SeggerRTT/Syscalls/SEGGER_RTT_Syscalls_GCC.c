@@ -63,6 +63,10 @@ Purpose : Low-level functions for using printf() via RTT in GCC.
 Revision: $Rev: 4351 $
 ----------------------------------------------------------------------
 */
+
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 #if (defined __GNUC__) && !(defined __SES_ARM) && !(defined __CROSSWORKS_ARM)
 
 //#include <reent.h>  // required for _write_r

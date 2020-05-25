@@ -25,6 +25,8 @@
  * 1 tab == 4 spaces!
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
 
 /*
  * The simplest possible implementation of pvPortMalloc().  Note that this

@@ -25,6 +25,9 @@
  * 1 tab == 4 spaces!
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 /* Standard includes. */
 #include <stdlib.h>
 #include <string.h>

@@ -16,6 +16,9 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
  
+ /* Define optimization level */
+#pragma GCC optimize ("O0")
+
 /**
  * @file    firmware.c
  * @brief   Application entry point.

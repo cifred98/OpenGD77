@@ -25,6 +25,9 @@
  * 1 tab == 4 spaces!
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 /*
  * A sample implementation of pvPortMalloc() and vPortFree() that combines
  * (coalescences) adjacent memory blocks as they are freed, and in so doing

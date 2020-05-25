@@ -25,6 +25,8 @@
  * 1 tab == 4 spaces!
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
 
 #include <stdlib.h>
 #include "FreeRTOS.h"

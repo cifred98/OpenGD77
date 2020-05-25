@@ -28,6 +28,9 @@
 
 /* This file was separated from original port.c by SDK team to enable efective tickless idle mode implementation. */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 #include "FreeRTOS.h"
 #include "task.h"
 #include "fsl_tickless_generic.h"

@@ -25,6 +25,9 @@
  * 1 tab == 4 spaces!
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 /*-----------------------------------------------------------
  * Implementation of functions defined in portable.h for the ARM CM4F port.
  *----------------------------------------------------------*/

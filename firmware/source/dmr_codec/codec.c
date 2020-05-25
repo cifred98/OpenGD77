@@ -16,6 +16,9 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 #include <dmr_codec/codec.h>
 #include "functions/voicePrompts.h"
 

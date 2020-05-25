@@ -25,6 +25,9 @@
  * 1 tab == 4 spaces!
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 /*
  * A sample implementation of pvPortMalloc() that allows the heap to be defined
  * across multiple non-contigous blocks and combines (coalescences) adjacent

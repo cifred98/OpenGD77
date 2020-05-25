@@ -18,6 +18,9 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 #include <vox.h>
 #include <interfaces/adc.h>
 #include <functions/sound.h>

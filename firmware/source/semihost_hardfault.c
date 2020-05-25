@@ -64,6 +64,9 @@
 //
 // ****************************************************************************
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 // Allow handler to be removed by setting a define (via command line)
 #if !defined (__SEMIHOST_HARDFAULT_DISABLE)
 

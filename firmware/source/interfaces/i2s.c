@@ -16,6 +16,9 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 #include <i2s.h>
 
 #define I2S_DMA_TX 0

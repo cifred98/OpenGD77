@@ -6,6 +6,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 /*
  * How to setup clock using clock driver functions:
  *

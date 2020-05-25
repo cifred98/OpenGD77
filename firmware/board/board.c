@@ -28,6 +28,9 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 /**
  * @file    board.c
  * @brief   Board initialization file.

@@ -19,6 +19,10 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
+
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 #include <display.h>
 #include <hardware/UC1701.h>
 #include <settings.h>

@@ -16,6 +16,9 @@
  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 #include <SPI_Flash.h>
 
 // private functions
@@ -276,7 +279,7 @@ static uint8_t spi_flash_transfer(uint8_t c)
 	for (uint8_t bit = 0; bit < 8; bit++)
 	{
 		GPIO_SPI_FLASH_CLK_U->PCOR = 1U << Pin_SPI_FLASH_CLK_U;
-		__asm volatile( "nop" );
+//		__asm volatile( "nop" );
 		if ((c&0x80) == 0U)
 		{
 			GPIO_SPI_FLASH_DO_U->PCOR = 1U << Pin_SPI_FLASH_DO_U;// Hopefully the compiler will optimise this to a value rather than using a shift
@@ -285,12 +288,12 @@ static uint8_t spi_flash_transfer(uint8_t c)
 		{
 			GPIO_SPI_FLASH_DO_U->PSOR = 1U << Pin_SPI_FLASH_DO_U;// Hopefully the compiler will optimise this to a value rather than using a shift
 		}
-		__asm volatile( "nop" );
+//		__asm volatile( "nop" );
 		c <<= 1;
 		c |= (GPIO_SPI_FLASH_DI_U->PDIR >> Pin_SPI_FLASH_DI_U) & 0x01U;
 		// toggle the clock
 		GPIO_SPI_FLASH_CLK_U->PSOR = 1U << Pin_SPI_FLASH_CLK_U;
-		__asm volatile( "nop" );
+//		__asm volatile( "nop" );
 
 	}
 	return c;

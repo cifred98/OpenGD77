@@ -83,6 +83,9 @@ Additional information:
 ----------------------------------------------------------------------
 */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 #include <SeggerRTT/RTT/SEGGER_RTT.h>
 
 #include <string.h>                 // for memcpy

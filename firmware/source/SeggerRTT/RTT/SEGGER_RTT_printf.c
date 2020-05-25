@@ -61,6 +61,10 @@ Purpose : Replacement for printf to write formatted data via RTT
 Revision: $Rev: 4351 $
 ----------------------------------------------------------------------
 */
+
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 #include "SEGGER_RTT.h"
 #include "SEGGER_RTT_Conf.h"
 

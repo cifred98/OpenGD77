@@ -77,6 +77,9 @@
  * (PLL) that is part of the microcontroller device.
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 #include <stdint.h>
 #include "fsl_device_registers.h"
 

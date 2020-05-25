@@ -6,6 +6,9 @@
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
+/* Define optimization level */
+#pragma GCC optimize ("O0")
+
 #include "usb.h"
 #include "fsl_device_registers.h"
 
