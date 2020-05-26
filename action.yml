@@ -1,0 +1,5 @@
+name: 'Build OpenGD77'
+description: ' '
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
