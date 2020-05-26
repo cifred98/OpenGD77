@@ -8,7 +8,7 @@ MAINTAINER "Niccolò Izzo IU2KIN <n@izzo.sh>"
 RUN apt update && apt install -y git build-essential libcurl4-openssl-dev wget
 
 # Install ARM cross-toolchain
-RUN wget https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2; tar xf *.bz2
+RUN wget -q https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-x86_64-linux.tar.bz2; tar xf *.bz2
 ENV PATH /gcc-arm-none-eabi-9-2019-q4-major/bin:$PATH
 
 # Download OpenGD77 sources
@@ -22,7 +22,7 @@ RUN cd OpenGD77/tools/codec_dat_files_creator && \
     ./codec_dat_files_creator && cp codec_bin_section_*.bin ../../firmware/linkerdata
 
 # Build firmware
-RUN git checkout -b development origin/development && \
+RUN cd OpenGD77 && git checkout -b development origin/development && \
     cd OpenGD77/firmware && mkdir build && cd build && ls && make -j9 -f ../Makefile
 
 RUN mv OpenGD77/firmware/build/bin/OpenGD77.sgl /github/workspace
