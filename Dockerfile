@@ -25,4 +25,4 @@ RUN cd OpenGD77/tools/codec_dat_files_creator && \
 RUN cd OpenGD77 && git checkout -b development origin/development && \
     cd firmware && mkdir build && cd build && ls && make -j9 -f ../Makefile
 
-RUN mv OpenGD77/firmware/build/bin/OpenGD77.sgl /github/workspace
+RUN mv OpenGD77/firmware/build/bin/OpenGD77.sgl /github/home
