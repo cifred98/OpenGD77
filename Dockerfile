@@ -4,6 +4,8 @@
 FROM debian:latest
 MAINTAINER "Niccolò Izzo IU2KIN <n@izzo.sh>"
 
+COPY entrypoint.sh /entrypoint.sh
+
 # Install dependencies
 RUN apt update && apt install -y git build-essential libcurl4-openssl-dev wget
 
