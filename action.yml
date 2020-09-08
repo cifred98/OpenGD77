@@ -1,0 +1,12 @@
+name: 'Build OpenGD77'
+description: ' '
+inputs:
+  branch:  # id of input
+    description: 'Branch to checkout'
+    required: true
+    default: 'CItesting'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.branch }}

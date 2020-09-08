@@ -1,0 +1,30 @@
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches:    
+      - master
+      - CItesting
+    # Sequence of patterns matched against refs/tags
+    tags:        
+      - test*  
+
+name: Upload Release Asset
+
+# workflow tasks
+jobs:
+  generate:
+    name: Generate build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate build files
+        uses: cifred98/OpenGD77@CItesting
+      - name: Upload binaries to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./OpenGD77.sgl
+          asset_name: OpenGD77.sgl
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "Test release"
