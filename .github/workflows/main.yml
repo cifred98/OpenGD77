@@ -1,0 +1,42 @@
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    tags:        
+      - test*  
+
+name: Upload Release Asset
+
+# workflow tasks
+jobs:
+  generate:
+    strategy:
+      matrix:
+        include:
+          - radio: GD77
+            filename: OpenGD77.sgl
+          - radio: GD77s
+            filename: OpenGD77.sgl
+          - radio: DM1801
+            filename: OpenDM1801.sgl
+          - radio: RD5R
+            filename: OpenRD5R.sgl
+    name: Generate build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate build files
+        uses: cifred98/OpenGD77@CItesting
+        with: 
+          radio: ${{ matrix.radio }}
+      - name: Change files permissions
+        run:  sudo chmod +r ./*.sgl
+      - name: Upload OpenGD77.sgl to release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./${{ matrix.filename }}
+          asset_name: ${{ matrix.filename }}
+          tag: ${{ github.ref }}
+          overwrite: true
+          body: "Test release"
+      

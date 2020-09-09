@@ -10,10 +10,16 @@ RADIO := GD77
 ##
 ifeq ("$(RADIO)","GD77")
 	DEFINES  := -DPLATFORM_GD77
+	FILENAME := OpenGD77.sgl
 else ifeq ("$(RADIO)","GD77s")
 	DEFINES  := -DPLATFORM_GD77S
+	FILENAME := OpenGD77S.sgl
 else ifeq ("$(RADIO)","DM1801")
 	DEFINES  := -DPLATFORM_DM1801
+	FILENAME := OpenDM1801.sgl
+else ifeq ("$(RADIO)","RD5R")
+	DEFINES  := -DPLATFORM_DM1801
+	FILENAME := OpenRD5R.sgl
 endif
 
 ##
@@ -198,7 +204,7 @@ OpenGD77.sgl: firmware.axf
 	$(Q)$(SZ) $(BUILD_DIR)/firmware.axf
 	$(Q)$(CP) -v -O binary $(BUILD_DIR)/firmware.axf $(BUILD_DIR)/firmware.bin
 	$(Q) ../tools/bin2sgl $(BUILD_DIR)/firmware.bin
-	$(Q) mv $(BUILD_DIR)/firmware.sgl $(BUILD_DIR)/OpenGD77.sgl
+	$(Q) mv $(BUILD_DIR)/firmware.sgl $(BUILD_DIR)/$(FILENAME)
 #../tools/GD77_FirmwareLoader "firmware.bin" GUI
 # checksum -p MK22FN512xxx12 -d "firmware.bin"
 
