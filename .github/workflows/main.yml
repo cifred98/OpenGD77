@@ -16,7 +16,7 @@ jobs:
           - radio: GD77
             filename: OpenGD77.sgl
           - radio: GD77s
-            filename: OpenGD77.sgl
+            filename: OpenGD77s.sgl
           - radio: DM1801
             filename: OpenDM1801.sgl
           - radio: RD5R
