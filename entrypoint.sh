@@ -14,5 +14,5 @@ cd ~/OpenGD77/tools/codec_dat_files_creator && \
 # Build firmware
 cd ~/OpenGD77 && git checkout $1 && \
     cd firmware && mkdir build && cd build && make -j9 -f ../Makefile RADIO=$2
-
+echo kek
 mv ~/OpenGD77/firmware/build/bin/*.sgl /github/workspace
